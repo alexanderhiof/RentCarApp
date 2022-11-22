@@ -29,13 +29,17 @@ namespace RentalWebApp.Pages.Base
             user = await UserService.GetUser(ownerId);
             car = await CarService.GetCar(id);
         }
-        
-        public void clickEvent()
+
+        public double clickEvent()
         {
-            Console.WriteLine("\nStart date: " + startDate + "\n");
-            Console.WriteLine("End date: " + endDate + "\n");
-            Console.WriteLine("Length of rent: " + (endDate - startDate) + "\n");
-            Console.WriteLine("Total price is: " + (endDate - startDate));
+            if (startDate == null || endDate == null)
+            {
+                return 0;
+            } else {
+                return (new DateTime(endDate.Value.Year, endDate.Value.Month, endDate.Value.Day)
+                    - new DateTime(startDate.Value.Year, startDate.Value.Month, startDate.Value.Day)).Days * car.Price;
+            }
+            
         }
     }
 }

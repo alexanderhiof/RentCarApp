@@ -42,11 +42,14 @@ else
                         <DatePicker TValue="DateTime?" @bind-Date="@endDate" Min="@startDate" />
                     </FieldBody>
                 </Field>
-                <h5>Total price: @car.Price * (endDate - startDate) </h5>
-                <Button Class="mb-10 block" Color="Color.Primary">Rent Car</Button>
-                <Button Class="mb-10 block" Color="Color.Primary" @onclick="@clickEvent" >test</Button>
-
-                
+                @if (clickEvent() < 1)
+                {
+                    <h3>You have to rent a car for more than 1 day</h3>
+                } else
+                {
+                    <h5>Total price: @clickEvent() kr </h5>
+                    <Button Class="mb-10 block" Color="Color.Primary">Rent Car</Button>
+                }
             }
         </div>
     </center>
