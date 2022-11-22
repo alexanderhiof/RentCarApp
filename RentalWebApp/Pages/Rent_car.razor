@@ -30,8 +30,33 @@ else
                 <h3 style="color: red;">You can not rent your own car</h3>
             }
             else {
+                <Field>
+                    <FieldLabel Style="float: left;">Start Date</FieldLabel>
+                    <FieldBody>
+                        <DatePicker TValue="DateTime?" @bind-Date="startDate" />
+                    </FieldBody>
+                </Field>
+                <Field>
+                    <FieldLabel Style="float: left;">End Date</FieldLabel>
+                    <FieldBody>
+                        <DatePicker TValue="DateTime?" @bind-Date="endDate" />
+                    </FieldBody>
+                </Field>
                 <Button Class="mb-10 block" Color="Color.Primary">Rent Car</Button>
+                <Button Class="mb-10 block" Color="Color.Primary" @onclick="clickEvent" >test</Button>
+
+                
             }
         </div>
     </center>
+}
+
+@code {
+    DateTime? startDate;
+    DateTime? endDate;
+
+    private void clickEvent() {
+        Console.WriteLine("Start date: " + startDate);
+        Console.WriteLine("End date: " + endDate);
+    }
 }
