@@ -6,6 +6,10 @@ namespace RentalWebApp.Pages.Base
 {
     public class SpesificCarBase : ComponentBase
     {
+        public DateTime? startDate;
+        public DateTime? endDate;
+
+
         [Parameter]
         public int ownerId { get; set; }
         [Parameter]
@@ -24,6 +28,14 @@ namespace RentalWebApp.Pages.Base
         {
             user = await UserService.GetUser(ownerId);
             car = await CarService.GetCar(id);
+        }
+        
+        public void clickEvent()
+        {
+            Console.WriteLine("\nStart date: " + startDate + "\n");
+            Console.WriteLine("End date: " + endDate + "\n");
+            Console.WriteLine("Length of rent: " + (endDate - startDate) + "\n");
+            Console.WriteLine("Total price is: " + (endDate - startDate));
         }
     }
 }

@@ -33,32 +33,21 @@ else
                 <Field>
                     <FieldLabel Style="float: left;">Start Date</FieldLabel>
                     <FieldBody>
-                        <DatePicker TValue="DateTime?" @bind-Date="startDate" />
+                        <DatePicker TValue="DateTime?" @bind-Date="@startDate" Min="DateTime.Now" />
                     </FieldBody>
                 </Field>
                 <Field>
                     <FieldLabel Style="float: left;">End Date</FieldLabel>
                     <FieldBody>
-                        <DatePicker TValue="DateTime?" @bind-Date="endDate" Min="@startDate" />
+                        <DatePicker TValue="DateTime?" @bind-Date="@endDate" Min="@startDate" />
                     </FieldBody>
                 </Field>
+                <h5>Total price: @car.Price * (endDate - startDate) </h5>
                 <Button Class="mb-10 block" Color="Color.Primary">Rent Car</Button>
-                <Button Class="mb-10 block" Color="Color.Primary" @onclick="clickEvent" >test</Button>
+                <Button Class="mb-10 block" Color="Color.Primary" @onclick="@clickEvent" >test</Button>
 
                 
             }
         </div>
     </center>
-}
-
-@code {
-    DateTime? startDate;
-    DateTime? endDate;
-
-
-    private void clickEvent() {
-        Console.WriteLine("Start date: " + startDate);
-        Console.WriteLine("End date: " + endDate);
-        Console.WriteLine("Length of rent: " + (endDate - startDate));
-    }
 }

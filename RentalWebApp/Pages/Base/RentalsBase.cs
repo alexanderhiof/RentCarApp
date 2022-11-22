@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using API.Models;
+using Microsoft.AspNetCore.Components;
 using RentalWebApp.Services;
 using RentalWebApp.State;
 
@@ -22,3 +23,5 @@ namespace RentalWebApp.Pages.Base
         }
     }
 }
+
+

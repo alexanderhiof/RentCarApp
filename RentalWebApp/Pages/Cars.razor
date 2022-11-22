@@ -2,6 +2,7 @@
 @inherits Base.CarListBase
 @inject State.AppState appState
 @using Blazorise
+@inject State.AppState appState
 
 <PageTitle>Cars</PageTitle>
 
@@ -11,6 +12,10 @@
 @if (Cars == null || Cars.ToList().Count() == 0)
 {
     <h1>Loading...</h1>
+}
+else if (appState.UserId == 0)
+{
+    <h1>Please select a user...</h1>
 }
 else
 {
