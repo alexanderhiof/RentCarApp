@@ -1,0 +1,51 @@
+﻿@page "/my-rentals/{Id:int}"
+@inherits Base.RentalsBase
+@using Blazorise
+@using API.Models
+@inject State.AppState appState
+
+<h3>ViewRentals</h3>
+
+<p>Dette er dine utleier. Det er per dags dato ingen, og vil aldri bli noen din broke jævel.</p>
+
+@if (Rentals == null)
+{
+    <h1>Cannot find any rentals...</h1>
+}
+else if (Rentals.ToList().Count == 0)
+{
+    <h1>You don't have any rentals registered.</h1>
+}
+else
+{
+    <Row>
+        @foreach (var rental in Rentals)
+        {
+            <Column ColumnSize="ColumnSize.Is4" Style="padding: 10px">
+                <Card> 
+                    <CardHeader>@findCarById(rental.CarId).CarName @findCarById(rental.CarId).CarModel</CardHeader>
+                    <CardBody>
+                        <CardImage Class="car-img" src="@findCarById(rental.CarId).ImageUrl"></CardImage>
+                        <CardText>Total Price for @((rental.EndDate - rental.StartDate).TotalDays) days is kr <b>@((rental.EndDate - rental.StartDate).TotalDays * rental.Price),-</b></CardText>
+                    </CardBody>
+                </Card>
+            </Column>
+        }
+    </Row>
+}
+
+@code {
+    Car currentCar;
+    
+    public Car findCarById(int id)
+    {
+        foreach (var car in Cars)
+        {
+            if (car.Id == id)
+            {
+                currentCar = car;
+            }
+        }
+        return currentCar;
+    }
+}

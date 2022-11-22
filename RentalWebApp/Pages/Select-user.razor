@@ -1,0 +1,39 @@
+﻿@page "/select-user"
+@inject State.AppState appState
+@inject IJSRuntime JsRuntime
+@inherits Base.UserBase
+
+
+@using API.Models;
+@using Blazorise
+
+<h3>Select_user</h3>
+
+@if (Users == null || Users.ToList().Count == 0)
+{
+    <h1>Loading...</h1>
+}
+else
+{
+    foreach (User user in Users)
+    {
+        <Button class="btn-primary mb-10 block" onclick="@(() => setUser(user.Id))">Set User To: @user.Name</Button>
+    }
+}
+
+
+@code {
+    public async void setUser(int id)
+    {
+        appState.UserId = id;
+        Thread.Sleep(1000);
+        alertMessage(id);
+    }
+
+    public async void alertMessage(int id)
+    {
+        await JsRuntime.InvokeVoidAsync("alert", "User Selected: " + id);
+    }
+
+
+}

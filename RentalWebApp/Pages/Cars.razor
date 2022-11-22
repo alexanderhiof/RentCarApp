@@ -1,0 +1,39 @@
+﻿@page "/"
+@inherits Base.CarListBase
+@inject State.AppState appState
+@using Blazorise
+
+<h3>Car</h3>
+
+
+
+@if (Cars == null || Cars.ToList().Count() == 0)
+{
+    <h1>Loading...</h1>
+}
+else
+{
+    <Row>
+        @foreach (var car in Cars)
+        {
+            <Column ColumnSize="ColumnSize.Is4" Style="padding: 10px">
+                <Card>
+                    <CardHeader><span style="float:left;">@car.CarName @car.CarModel</span> <span style="float:right;">kr @car.Price,-/day</span></CardHeader>
+                    <CardBody>
+                        <CardImage Class="car-img" src=@car.ImageUrl></CardImage>
+                        <CardText>Prod year: @car.ProductionYear</CardText>
+                        <CardText>Seats: @car.Seats</CardText>
+                        @if (car.UserId == appState.UserId)
+                        {
+                            <CardText Style="color: green;">This is your car.</CardText>
+                        }
+                        else {
+                            <CardText Style="color: red;">This is not your car.</CardText>
+                        }
+                        <Button To="@("cars/" + car.UserId + "/" + car.Id)" Type="ButtonType.Link" Color="Color.Primary" style="float: right;">View Car</Button>
+                    </CardBody>
+                </Card>
+            </Column>
+        }
+    </Row>
+}

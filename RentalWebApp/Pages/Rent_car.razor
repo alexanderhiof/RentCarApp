@@ -1,0 +1,34 @@
+﻿@page "/Cars/{ownerId:int}/{Id:int}"
+@inherits Base.SpesificCarBase
+@inject State.AppState appState
+@using Blazorise
+
+@if (car == null)
+{
+    <h1>Loading car...</h1>
+}
+else
+{
+    <center>
+        <Alert Color="Color.Success" Visible>
+            <AlertMessage>You're visiting the @car.CarName @car.CarModel listing</AlertMessage> 
+            <AlertDescription> | UserId: @appState.UserId</AlertDescription>
+        </Alert>
+
+        <div>
+            <h1>@car.CarName @car.CarModel | Owner: @user.Name</h1>
+            <img class="car-img mb-10" src=@car.ImageUrl />
+            <div class="mb-10">
+                <h4>Production Year: @car.ProductionYear</h4>
+                <h4>Seats: @car.Seats</h4>
+                <h5>Price per day: kr @car.Price,-</h5>
+            </div>
+            @if (car.UserId == appState.UserId) {
+                <h3 style="color: red;">You can not rent your own car</h3>
+            }
+            else {
+                <Button Class="mb-10 block" Color="Color.Primary">Rent Car</Button>
+            }
+        </div>
+    </center>
+}
