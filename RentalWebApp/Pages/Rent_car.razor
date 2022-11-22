@@ -3,12 +3,15 @@
 @inject State.AppState appState
 @using Blazorise
 
+
+
 @if (car == null)
 {
     <h1>Loading car...</h1>
 }
 else
 {
+    <PageTitle>@car.CarName @car.CarModel</PageTitle>
     <center>
         <Alert Color="Color.Success" Visible>
             <AlertMessage>You're visiting the @car.CarName @car.CarModel listing</AlertMessage> 
