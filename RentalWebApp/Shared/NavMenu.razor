@@ -16,14 +16,22 @@
                 <span class="oi oi-person" aria-hidden="true"></span> Select User
             </NavLink>
         </div>
+        
+        <div class="nav-car px-3">
+            <NavLink class="nav-link" href="add-car" Match="NavLinkMatch.All">
+                <span class="oi oi-plus" aria-hidden="true"></span> Add Car
+            </NavLink>
+        </div>
+        
         <div class="nav-car px-3">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
                 <span class="oi oi-dollar" aria-hidden="true"></span> Cars
             </NavLink>
         </div>
+        
         <div class="nav-car px-3">
             <NavLink class="nav-link" href=@("my-rentals/" + appState.UserId) Match="NavLinkMatch.All">
-                <span class="oi oi-list" aria-hidden="true"></span> My Rentals
+                <span class="oi oi-list" aria-hidden="true"></span> Rental history
             </NavLink>
         </div>
 
