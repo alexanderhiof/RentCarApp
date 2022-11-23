@@ -1,24 +1,25 @@
 using Xunit;
 
+
 namespace AppTests
 {
+    
+
     public class UnitTest1
     {
-        [Fact]
-        public void PassingTest()
+        [Theory]
+        [InlineData(3)]
+        [InlineData(5)]
+        [InlineData(6)]
+
+        public void MyFirstTheory(int value)
         {
-            Assert.Equal(4, Add(2,2));
+            Assert.True(IsOdd(value));
         }
 
-        [Fact]
-        public void FailingTest()
+        bool IsOdd(int value)
         {
-            Assert.Equal(5, Add(2, 2));
-        }
-
-        int Add(int x, int y)
-        {
-            return x + y;
+            return value % 2 == 1;
         }
     }
 }
