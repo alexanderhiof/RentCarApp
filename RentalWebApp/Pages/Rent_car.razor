@@ -1,6 +1,6 @@
 ﻿@page "/Cars/{ownerId:int}/{Id:int}"
 @inherits Base.SpesificCarBase
-@inject State.AppState appState
+<!-- State.appstate appState -->
 @using Blazorise
 
 
@@ -13,11 +13,6 @@ else
 {
     <PageTitle>@car.CarName @car.CarModel</PageTitle>
     <center>
-        <Alert Color="Color.Success" Visible>
-            <AlertMessage>You're visiting the @car.CarName @car.CarModel listing</AlertMessage> 
-            <AlertDescription> | UserId: @appState.UserId</AlertDescription>
-        </Alert>
-
         <div>
             <h1>@car.CarName @car.CarModel | Owner: @user.Name</h1>
             <img class="car-img mb-10" src=@car.ImageUrl />
@@ -26,10 +21,12 @@ else
                 <h4>Seats: @car.Seats</h4>
                 <h5>Price per day: kr @car.Price,-</h5>
             </div>
-            @if (car.UserId == appState.UserId) {
+            @if (car.UserId == appState.UserId)
+            {
                 <h3 style="color: red;">You can not rent your own car</h3>
             }
-            else {
+            else
+            {
                 <Field>
                     <FieldLabel Style="float: left;">Start Date</FieldLabel>
                     <FieldBody>
@@ -42,13 +39,17 @@ else
                         <DatePicker TValue="DateTime?" @bind-Date="@endDate" Min="@startDate" />
                     </FieldBody>
                 </Field>
+
+
+
                 @if (clickEvent() < 1)
                 {
                     <h3>You have to rent a car for more than 1 day</h3>
-                } else
+                }
+                else
                 {
                     <h5>Total price: @clickEvent() kr </h5>
-                    <Button Class="mb-10 block" Color="Color.Primary">Rent Car</Button>
+                    <Button Class="mb-10 block"  Color="Color.Primary" onclick="@AddRental">Rent Car</Button>
                 }
             }
         </div>

@@ -18,5 +18,10 @@ namespace RentalWebApp.Services
             Car? car = await _httpClient.GetFromJsonAsync<Car>("api/Car/" + id);
             return car;
         }
+
+        public async Task AddCar(Car car)
+        {
+            await _httpClient.PostAsJsonAsync("api/Car", car);
+        }
     }
 }

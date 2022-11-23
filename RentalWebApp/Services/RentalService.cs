@@ -17,5 +17,10 @@ namespace RentalWebApp.Services
             Rental[]? rentals = await _httpClient.GetFromJsonAsync<Rental[]>("api/Rental/t/" + tenantId);
             return rentals;
         }
+        public async Task AddRental(Rental rental)
+        {
+            await _httpClient.PostAsJsonAsync("api/Rental", rental);
+        }
+
     }
 }

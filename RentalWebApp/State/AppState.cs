@@ -2,7 +2,7 @@
 
 namespace RentalWebApp.State
 {
-    public class AppState
+    public class appstate
     {
         public int UserId { get; set; }
     }

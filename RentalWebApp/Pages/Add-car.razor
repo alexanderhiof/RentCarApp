@@ -1,22 +1,56 @@
 ﻿@page "/add-car"
+@using API.Models
 @using Blazorise
+@inherits Base.CarListBase
+@inject State.appstate appState
 
 <PageTitle>Add Car</PageTitle>
 
 <h3>Add your car to the market</h3>
 
+@if (appState.UserId == 0)
+{
+    <h1>Please select a user...</h1>
+}
+else
+{
 
-<Field>
-    <FieldLabel>Car Name</FieldLabel>
-    <TextEdit Placeholder="Ex. Audi" />
-    <FieldLabel>Car Model</FieldLabel>
-    <TextEdit Placeholder="Ex. A4" />
-    <FieldLabel>Production Year</FieldLabel>
-    <TextEdit Placeholder="Ex. 2018" />
-    <FieldLabel>Image URL</FieldLabel>
-    <TextEdit Placeholder="URl to image" />
-    <FieldLabel>Price pr day</FieldLabel>
-    <TextEdit Placeholder="Ex. 1500" />
-    <FieldLabel>Seats</FieldLabel>
-    <TextEdit Placeholder="Ex. 5" />
-</Field>
+    <Alert Color="Color.Success" Visible>
+        <AlertMessage>You are userid: @appState.UserId</AlertMessage>
+    </Alert>
+
+
+
+
+    <Field>
+        <FieldLabel>Car Name</FieldLabel>
+        <TextEdit @bind-Text="@inputCarName" Placeholder="Ex. Audi" />
+    </Field>
+
+    <Field>
+        <FieldLabel>Car Model</FieldLabel>
+        <TextEdit @bind-Text="@inputCarModel" Placeholder="Ex. A4" />
+    </Field>
+
+    <Field>
+        <FieldLabel>Production Year</FieldLabel>
+        <TextEdit @bind-Text="@inputProdYear" Placeholder="Ex. 2018" />
+    </Field>
+
+    <Field>
+        <FieldLabel>Image URL</FieldLabel>
+        <TextEdit @bind-Text="@inputImgURL" Placeholder="URl to image" />
+    </Field>
+    
+    <Field>
+        <FieldLabel>Price pr day</FieldLabel>
+        <TextEdit @bind-Text="@inputPricePrDay" Placeholder="Ex. 1500" />
+    </Field>
+
+    <Field>
+        <FieldLabel>Seats</FieldLabel>
+        <TextEdit @bind-Text="@inputCarSeats" Placeholder="Ex. 5" />
+    </Field>
+
+    <Button Class="mb-10 block" Color="Color.Primary" onclick="@AddCar">Add Car</Button>
+}
