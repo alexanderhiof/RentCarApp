@@ -40,5 +40,18 @@ namespace API.Controllers
 
             return CreatedAtAction("Get", new { id = car.Id }, car);
         }
+
+        [HttpDelete("{id}")]
+
+        public async Task<IActionResult> DeleteCar(int id)
+        {
+            var car = await _context.Cars.FindAsync(id);
+            if (car == null)
+                return NotFound();
+            _context.Cars.Remove(car);
+            await _context.SaveChangesAsync();
+            return NoContent();
+        }
+
     }
 }

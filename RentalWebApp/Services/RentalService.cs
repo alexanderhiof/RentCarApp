@@ -22,5 +22,10 @@ namespace RentalWebApp.Services
             await _httpClient.PostAsJsonAsync("api/Rental", rental);
         }
 
+
+        public async Task DeleteRentalBasedOnCar(int id)
+        {
+            await _httpClient.DeleteAsync("api/Rental/" + id);
+        }
     }
 }

@@ -8,5 +8,7 @@ namespace RentalWebApp.Services
         Task<Rental> GetRentalForTenant(int id);
 
         Task AddRental(Rental rental);
+
+        Task DeleteRentalBasedOnCar(int id);
     }
 }

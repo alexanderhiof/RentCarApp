@@ -2,7 +2,7 @@
 @inject State.appstate appState
 @inject IJSRuntime JsRuntime
 @inherits Base.UserBase
-
+@inject NavigationManager navigationManager
 
 @using API.Models;
 @using Blazorise
@@ -30,6 +30,9 @@ else
         appState.UserId = id;
         Thread.Sleep(1000);
         alertMessage(id);
+
+        navigationManager.NavigateTo("/");
+        Thread.Sleep(500);
     }
 
     public async void alertMessage(int id)

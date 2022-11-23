@@ -56,5 +56,23 @@ namespace API.Controllers
 
             return CreatedAtAction("Get", new { id = rental.Id }, rental);
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteRentalBasedOnCar(int id)
+        {
+            var allRentals = _context.Rental.ToListAsync();
+
+            foreach (var rental in await allRentals)
+            {
+                if (rental.CarId == id)
+                {
+                    _context.Rental.Remove(rental);
+                    await _context.SaveChangesAsync();
+                }    
+
+            }
+            return NoContent();
+        }
+
     }
 }

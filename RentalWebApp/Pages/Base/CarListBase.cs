@@ -22,6 +22,9 @@ namespace RentalWebApp.Pages.Base
         [Inject]
         public State.appstate appState { get; set; }
 
+        [Inject]
+        NavigationManager NavigationManager { get; set; }
+
         protected override async Task OnInitializedAsync()
         {
             Cars = (await CarService.GetCars()).ToList();
@@ -40,6 +43,8 @@ namespace RentalWebApp.Pages.Base
                 Seats = int.Parse(inputCarSeats),
                 UserId = appState.UserId
             });
+
+            NavigationManager.NavigateTo("/");
         }
 
     }

@@ -24,6 +24,7 @@ else
             @if (car.UserId == appState.UserId)
             {
                 <h3 style="color: red;">You can not rent your own car</h3>
+                <Button Class="mb-10 block" Color="Color.Danger" onclick="@DeleteCar">Delete Listing</Button>
             }
             else
             {

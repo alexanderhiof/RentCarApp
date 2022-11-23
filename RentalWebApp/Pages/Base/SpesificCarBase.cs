@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Components;
 using RentalWebApp.Services;
 using RentalWebApp.State;
 
+
+
 namespace RentalWebApp.Pages.Base
 {
     public class SpesificCarBase : ComponentBase
@@ -28,6 +30,9 @@ namespace RentalWebApp.Pages.Base
 
         [Inject]
         public State.appstate appState { get; set; }
+
+        [Inject]
+        NavigationManager NavigationManager { get; set; }
 
         public Car car { get; set; }
         public User user { get; set; }
@@ -63,6 +68,19 @@ namespace RentalWebApp.Pages.Base
                 UserId = car.UserId,
                 Tenant = appState.UserId
             });
+
+            NavigationManager.NavigateTo("my-rentals/" + appState.UserId);
         }
+
+
+        public async Task DeleteCar()
+        {
+            _ = CarService.DeleteCar(car.Id);
+            _ = RentalService.DeleteRentalBasedOnCar(car.Id);
+            NavigationManager.NavigateTo("/");
+        }
+
+
+
     }
 }
