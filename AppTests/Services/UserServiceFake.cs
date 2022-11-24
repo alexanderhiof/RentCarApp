@@ -59,7 +59,15 @@ namespace AppTests.Services
 
         public IEnumerable<User> GetUsers()
         {
-            throw new NotImplementedException();
+            var users = new List<User>();
+            foreach (var user in _users)
+            {
+                if (user.Id != null)
+                {
+                    users.Add(user);
+                }
+            }
+            return users;
         }
     }
 }

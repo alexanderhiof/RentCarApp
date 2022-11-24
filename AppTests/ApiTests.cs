@@ -62,16 +62,16 @@ namespace AppTests
             Assert.IsType<User>(okResult);
         }
 
-        //[Fact]
-        //public void GetUserCount() // Checks if the User list has 4 elements
-        //{
-        //    // Act
-        //    var okResult = _userService.GetUsers();
+        [Fact]
+        public void GetUserCount() // Checks if the User list has 4 elements
+        {
+            // Act
+            var okResult = _userService.GetUsers();
 
-        //    // Assert
-        //    var test = Assert.IsType<List<User>>(okResult);
-        //    Assert.Equal(4, test.Count);
-        //}
+            // Assert
+            var test = Assert.IsType<List<User>>(okResult);
+            Assert.Equal(4, test.Count);
+        }
 
     }
 }
