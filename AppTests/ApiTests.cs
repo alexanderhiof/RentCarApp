@@ -9,15 +9,16 @@ namespace AppTests
 {
     public class ApiTests
     {
-        private readonly RentalService _rentalController;
         private readonly IRentalServiceFake _rentalService;
+        private readonly ICarServiceFake _carService;
         public ApiTests()
         {
             _rentalService = new RentalServiceFake();
+            _carService = new CarServiceFake();
         }
 
         [Fact]
-        public void GetRentalsForTenantId3() // Tests to see if Tenant 3 has 1 Rental
+        public void GetRentalsForTenantId3() // Checks to see if Tenant 3 has 1 Rental
         {
             // Act
             var okResult = _rentalService.GetRentalsForTenant(3);
@@ -29,7 +30,7 @@ namespace AppTests
         }
 
         [Fact]
-        public void GetRentalById7() // Tests if Rental id 7 has Tenant 3 connected
+        public void GetRentalById7() // Checks if Rental id 7 has Tenant 3 connected
         {
             // Act
             var okResult = _rentalService.GetRentalForTenant(7);
@@ -38,6 +39,18 @@ namespace AppTests
             Assert.Equal(3, okResult.Tenant);
         }
 
+
+        [Fact]
+        public void GetCarById() // Gets carid 2 and checks if its an element of the Car list
+        {
+            // Act
+            var okResult = _carService.GetCar(3);
+
+            // Assert
+            Assert.IsType<Car>(okResult);
+        }
+
+        
 
     }
 }
