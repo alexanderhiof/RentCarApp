@@ -21,4 +21,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\API\API.csproj" />
+    <ProjectReference Include="..\RentalWebApp\RentalWebApp.csproj" />
+  </ItemGroup>
+
 </Project>
