@@ -11,10 +11,12 @@ namespace AppTests
     {
         private readonly IRentalServiceFake _rentalService;
         private readonly ICarServiceFake _carService;
+        private readonly IUserServiceFake _userService;
         public ApiTests()
         {
             _rentalService = new RentalServiceFake();
             _carService = new CarServiceFake();
+            _userService = new UserServiceFake();
         }
 
         [Fact]
@@ -50,7 +52,26 @@ namespace AppTests
             Assert.IsType<Car>(okResult);
         }
 
-        
+        [Fact]
+        public void GetUserById() // Gets user id 6 and checks if its an element of the User list
+        {
+            // Act
+            var okResult = _userService.GetUser(6);
+
+            // Assert
+            Assert.IsType<User>(okResult);
+        }
+
+        //[Fact]
+        //public void GetUserCount() // Checks if the User list has 4 elements
+        //{
+        //    // Act
+        //    var okResult = _userService.GetUsers();
+
+        //    // Assert
+        //    var test = Assert.IsType<List<User>>(okResult);
+        //    Assert.Equal(4, test.Count);
+        //}
 
     }
 }

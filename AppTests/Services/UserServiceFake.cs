@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,19 +24,19 @@ namespace AppTests.Services
                 },
                 new User()
                 {
-                    Id = 1,
+                    Id = 2,
                     Name = "Sander van der Velden",
                     BirthDate = new DateTime(1990, 1, 12)
                 },
                 new User()
                 {
-                    Id = 1,
+                    Id = 6,
                     Name = "Samantha Huisman",
                     BirthDate = new DateTime(2002, 9, 12)
                 },
                 new User()
                 {
-                    Id = 1,
+                    Id = 9,
                     Name = "Aaron Spierings",
                     BirthDate = new DateTime(1990, 6, 3)
                 }
