@@ -9,7 +9,7 @@ namespace AppTests.Services
 {
     public interface IUserServiceFake
     {
-        Task<IEnumerable<User>> GetUsers();
-        Task<User> GetUser(int id);
+        IEnumerable<User> GetUsers();
+        User GetUser(int id);
     }
 }

@@ -42,9 +42,9 @@ namespace AppTests.Services
             };
         }
 
-        public Task<User> GetUser(int id)
+        public User GetUser(int id)
         {
-            User? user = null;
+            User user = null;
             
             foreach (var users in _users)
             {
@@ -56,7 +56,7 @@ namespace AppTests.Services
             return user;
         }
 
-        public Task<IEnumerable<User>> GetUsers()
+        public IEnumerable<User> GetUsers()
         {
             throw new NotImplementedException();
         }
