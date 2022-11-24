@@ -52,7 +52,16 @@ namespace AppTests.Services
 
         public Rental GetRentalForTenant(int id)
         {
-            throw new NotImplementedException();
+            Rental rental = null;
+            
+            foreach (var rentals in _rentals)
+            {
+                if (rentals.Id == id)
+                {
+                    rental = rentals;
+                }
+            }
+            return rental;
         }
 
         public IEnumerable<Rental> GetRentalsForTenant(int tenantId)

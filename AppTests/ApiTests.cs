@@ -17,7 +17,7 @@ namespace AppTests
         }
 
         [Fact]
-        public void GetRentalsForTenantId3()
+        public void GetRentalsForTenantId3() // Tests to see if Tenant 3 has 1 Rental
         {
             // Act
             var okResult = _rentalService.GetRentalsForTenant(3);
@@ -29,7 +29,15 @@ namespace AppTests
         }
 
         [Fact]
-        public void 
-        
+        public void GetRentalById7() // Tests if Rental id 7 has Tenant 3 connected
+        {
+            // Act
+            var okResult = _rentalService.GetRentalForTenant(7);
+
+            // Assert
+            Assert.Equal(3, okResult.Tenant);
+        }
+
+
     }
 }
