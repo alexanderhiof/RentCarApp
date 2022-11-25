@@ -1,6 +1,6 @@
 # Rent a Car App - Software Engineering & Testing
 + [Installing](#install) &#9989;
-    - [Project Setup](#project-setup)
+    - [Project Setup](#project-setup)🚀
     - [Running Tests](#tests)
 + [Run App](#run-app)
     - [Known Issues - Check Before Running](#known-issues)
