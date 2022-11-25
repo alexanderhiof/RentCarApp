@@ -12,3 +12,4 @@
 5. Go into unzipped folder and double click **API.sln**
 
 ## Project Setup
+1.  Go into the **Solution Explorer** ![Solution Explorer](images/SolutionExplorer.png)
