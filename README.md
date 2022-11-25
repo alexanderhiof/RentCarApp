@@ -19,7 +19,7 @@
 3. Click **Set Startup Projects** towards the middle 
 <img src="images/Startup.png" />
 4. Set the checkbox to **Multiple startup projects**
-5. Set **API** and **RentalWebApp** to **Start** and leave AppTests as None !<img src="images/startprojects.png" />
+5. Set **API** and **RentalWebApp** to **Start** and leave AppTests as None <img src="images/startprojects.png" />
 6. Click OK then click **CTRL + SHIFT + B** to build solution
 7. If build is successful, everything **should** work!
 
