@@ -13,9 +13,11 @@
 
 
 ## Project Setup
-1.  Go into the **Solution Explorer** on the right ![Solution Explorer](images/SolutionExplorer.png)
+1.  Go into the **Solution Explorer** on the right 
+![Solution Explorer](images/SolutionExplorer.png)
 2. Right-click **Solution 'API' (3 of 3 projects)**
-3. Click **Set Startup Projects** towards the middle ![Right Click Menu](images/Startup.png)
+3. Click **Set Startup Projects** towards the middle 
+![Right Click Menu](images/Startup.png)
 4. Set the checkbox to **Multiple startup projects**
 5. Set **API** and **RentalWebApp** to **Start** and leave AppTests as None ![Set Startup Projects](images/startprojects.png)
 6. Click OK then click **CTRL + SHIFT + B** to build solution
