@@ -1,9 +1,9 @@
 # Rent a Car App - Software Engineering & Testing
-+ [Installing](#install) &#9989;
-    - [Project Setup](#project-setup)🚀
-    - [Running Tests](#tests)
++ [Installing](#install) 
+    - [Project Setup](#project-setup) 🚀
+    - [Running Tests](#tests) &#9989;
 + [Run App](#run-app)
-    - [Known Issues - Check Before Running](#known-issues)
+    - [Known Issues - Check Before Running](#known-issues) ⚠️
 ## Install 
 1. Install [Visual Studio 2022](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSLandingPage&cid=2030&passive=false).
 2. Install project by clicking ![Code Button](images/code_button.png)
@@ -12,7 +12,7 @@
 5. Go into unzipped folder and double click **API.sln**
 
 
-## Project Setup
+## Project Setup 🚀
 
 1.  Go into the **Solution Explorer** on the right
 <img src="images/SolutionExplorer.png" />
@@ -29,7 +29,7 @@
 7. If build is successful, everything **should** work!
 
 
-## Tests
+## Tests &#9989;
 1. At the top of Visual Studio in the toolbar, you should see **Test**
 2. Click **Test** then **Test Explorer**
 3. Click the **Left most run button** - Hovering over it should say *Run all Tests in View*
@@ -45,7 +45,7 @@
 3. The API has to run in the background, you can run the GET requests in it to see data PS: **DO NOT X OUT ANY WINDOW** it will stop the webapp
 4. Explore the website, add cars to the listings, rent cars that you dont own and see the rental history for your user.
 
-## Known Issues
+## Known Issues ⚠️
 + Refreshing by F5 or clicking refresh on browser will reset your userid and prompt your to re-select a user
 + Changing between the different tabs(Select user, Add car, Cars, Rental History) after changing user will sometimes show previous users data
 
