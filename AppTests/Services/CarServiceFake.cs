@@ -1,14 +1,8 @@
 ﻿using API.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AppTests.Services
 {
-    
+
     public class CarServiceFake : ICarServiceFake
     {
         private readonly List<Car> _cars;
@@ -51,8 +45,8 @@ namespace AppTests.Services
                 }
             };
         }
-        
-        
+
+
         public IEnumerable<Car> GetCars()
         {
             throw new NotImplementedException();
@@ -81,6 +75,6 @@ namespace AppTests.Services
         {
             throw new NotImplementedException();
         }
-        
+
     }
 }
