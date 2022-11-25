@@ -37,7 +37,9 @@
 <img src="images/tests.png" />
 
 ## Run App
-*Refreshing by F5 or clicking refresh on browser will reset your userid*
+```diff
+- Refreshing by F5 or clicking refresh on browser will reset your userid
+```
 1. Click **Start** towards the top of the screen in Visual Studio
 2. An API service and website prompting you to **Select a user**
 3. The API has to run in the background, you can run the GET requests in it to see data PS: **DO NOT X OUT ANY WINDOW** it will stop the webapp
@@ -46,4 +48,7 @@
 ## Known Issues
 + Refreshing by F5 or clicking refresh on browser will reset your userid and prompt your to re-select a user
 + Changing between the different tabs(Select user, Add car, Cars, Rental History) after changing user will sometimes show previous users data
-**Temp FIX:** *Click any other element on the nav bar and go back will refresh the id to the correct one*
+
+```diff
+- **Temp FIX** Click any other element on the nav bar and go back will refresh the id to the correct one
+```
