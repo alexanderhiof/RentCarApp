@@ -13,16 +13,21 @@
 
 
 ## Project Setup
-<p>1.  Go into the <b>Solution Explorer</b> on the right
+
+1.  Go into the **Solution Explorer** on the right
 <img src="images/SolutionExplorer.png" />
+
 2. Right-click **Solution 'API' (3 of 3 projects)**
-3. Click <b>Set Startup Projects</b> towards the middle 
+3. Click **Set Startup Projects** towards the middle 
 <img src="images/Startup.png" />
-4. Set the checkbox to <b>Multiple startup projects</b>
-5. Set <b>API</b> and <b>RentalWebApp</b> to <b>Start</b> and leave AppTests as None 
+
+4. Set the checkbox to **Multiple startup projects**
+5. Set **API** and **RentalWebApp** to **Start** and leave AppTests as None 
 <img src="images/startprojects.png" />
-6. Click OK then click <b>CTRL + SHIFT + B</b> to build solution
-7. If build is successful, everything <b>should</b> work!
+
+6. Click OK then click **CTRL + SHIFT + B** to build solution
+7. If build is successful, everything **should** work!
+
 
 ## Tests
 1. At the top of Visual Studio in the toolbar, you should see **Test**
