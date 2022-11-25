@@ -45,7 +45,7 @@
 3. The API has to run in the background, you can run the GET requests in it to see data PS: **DO NOT X OUT ANY WINDOW** it will stop the webapp
 4. Explore the website, add cars to the listings, rent cars that you dont own and see the rental history for your user.
 
-## Known Issues ⚠️
+## ⚠️ Known Issues ⚠️
 + Refreshing by F5 or clicking refresh on browser will reset your userid and prompt your to re-select a user
 + Changing between the different tabs(Select user, Add car, Cars, Rental History) after changing user will sometimes show previous users data
 
