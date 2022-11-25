@@ -12,4 +12,6 @@
 5. Go into unzipped folder and double click **API.sln**
 
 ## Project Setup
-1.  Go into the **Solution Explorer** ![Solution Explorer](images/SolutionExplorer.png)
+1.  Go into the **Solution Explorer** on the right ![Solution Explorer](images/SolutionExplorer.png)
+2. Right-click **Solution 'API' (3 of 3 projects)**
+3. Click **Set Startup Projects** ![Right Click Menu](images/Startup.png)
