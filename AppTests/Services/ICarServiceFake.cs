@@ -12,7 +12,7 @@ namespace AppTests.Services
         IEnumerable<Car> GetCars();
         Car GetCar(int id);
 
-        Car AddCar(Car car);
+        List<Car> AddCar(Car car);
 
         Car DeleteCar(int id);
     }

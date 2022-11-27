@@ -43,7 +43,7 @@ namespace AppTests
 
 
         [Fact]
-        public void GetCarById() // Gets carid 2 and checks if its an element of the Car list
+        public void GetCarById3() // Gets carid 3 and checks if its an element of the Car list
         {
             // Act
             var okResult = _carService.GetCar(3);
@@ -53,7 +53,7 @@ namespace AppTests
         }
 
         [Fact]
-        public void GetUserById() // Gets user id 6 and checks if its an element of the User list
+        public void GetUserById6() // Gets user id 6 and checks if its an element of the User list
         {
             // Act
             var okResult = _userService.GetUser(6);
@@ -71,6 +71,38 @@ namespace AppTests
             // Assert
             var test = Assert.IsType<List<User>>(okResult);
             Assert.Equal(4, test.Count);
+        }
+
+        [Fact]
+        public void AddingCar() // Checks if adding a car takes the list from 3 to 4
+        {
+            // Act
+            var okResult = _carService.AddCar(new Car()
+            {
+                Id = 4,
+                CarName = "Audi",
+                CarModel = "A4",
+                ProductionYear = 2018,
+                ImageUrl = "test.jpg",
+                Price = 400,
+                Seats = 5,
+                UserId = 2
+            });
+
+            // Assert
+            var test = Assert.IsType<List<Car>>(okResult);
+            Assert.Equal(4, test.Count);
+        }
+
+        [Fact]
+        public void DeleteCar() // Checks if deleting a car takes the list from 3 to 2
+        {
+            // Act
+            var okResult = _carService.DeleteCar(3);
+
+            // Assert
+            var test = Assert.IsType<List<Car>>(okResult);
+            Assert.Equal(2, test.Count);
         }
 
     }

@@ -1,4 +1,5 @@
 ﻿using API.Models;
+using System.Net.Http;
 
 namespace AppTests.Services
 {
@@ -66,14 +67,25 @@ namespace AppTests.Services
             return car;
         }
 
-        public Car AddCar(Car car)
+        public List<Car> AddCar(Car car)
         {
-            throw new NotImplementedException();
+            _cars.Add(car);
+            return _cars;
         }
 
         public Car DeleteCar(int id)
         {
-            throw new NotImplementedException();
+            Car car = null;
+
+            foreach (var cars in _cars.ToList())
+            {
+                if (cars.Id == id)
+                {
+                    car = cars;
+                    _cars.Remove(cars);
+                }
+            }
+            return car;
         }
 
     }
