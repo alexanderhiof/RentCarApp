@@ -14,6 +14,6 @@ namespace AppTests.Services
 
         List<Car> AddCar(Car car);
 
-        Car DeleteCar(int id);
+        List<Car> DeleteCar(int id);
     }
 }

@@ -73,19 +73,16 @@ namespace AppTests.Services
             return _cars;
         }
 
-        public Car DeleteCar(int id)
+        public List<Car> DeleteCar(int id)
         {
-            Car car = null;
-
             foreach (var cars in _cars.ToList())
             {
                 if (cars.Id == id)
                 {
-                    car = cars;
                     _cars.Remove(cars);
                 }
             }
-            return car;
+            return _cars;
         }
 
     }
